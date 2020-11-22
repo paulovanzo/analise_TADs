@@ -14,7 +14,6 @@ class Fila{
         ~Fila();
         bool empty();
         bool full();
-        Fila<T>& copy( Fila<T> &F);
         void inserir( int num );
         T remover();
         void print();
@@ -51,20 +50,20 @@ bool Fila<T>::full(){
 }
 
 template < typename T>
-Fila<T>& Fila<T>::copy( Fila<T> &F){
-
-    elementos = F.elementos;
-    tam = F.tam;
-    capacidade = F.capacidade;
-
-    return *this;
-}
-
-template < typename T>
 void Fila<T>::inserir( int num ){
 
     if( full() ){
-        return;
+
+        capacidade = 2*capacidade;
+        T novos_elementos = new T[capacidade];
+
+        for (int i = 0; i < (capacidade/2); ++i){
+            novos_elementos[i] = elementos[i];
+        }
+
+        delete[] elementos;
+        elementos = novos_elementos;
+
     }
 
     elementos[tam] = num;
