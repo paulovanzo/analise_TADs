@@ -15,8 +15,8 @@ public:
   bool empty ();
   bool full ();
   T& top ();
-  int push ( T novo );
-  int pop ();
+  void push ( T novo );
+  void pop ();
   int size();
 };
  
@@ -40,7 +40,7 @@ bool Pilha<T>::full (){
 }
  
 template <typename T>
-int Pilha<T>::push ( T novo ){
+void Pilha<T>::push ( T novo ){
   if (full()){
     capacidade = 2*capacidade;
     T* novos_elementos = new T[capacidade];
@@ -54,17 +54,15 @@ int Pilha<T>::push ( T novo ){
   
   elementos[tamanho++] = novo;
   
-  return 1;
 }
  
 template <typename T>
-int Pilha<T>::pop (){
+void Pilha<T>::pop (){
 
   if (empty())
-    return 0;
+    return;
   
   tamanho--;
-  return 1;
 }
  
 template <typename T>
