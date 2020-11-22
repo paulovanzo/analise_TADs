@@ -10,6 +10,7 @@ class Fila{
         size_t tam;
         size_t capacidade;
     public:
+        Fila();
         Fila( int capacidade );
         ~Fila();
         bool empty();
@@ -18,6 +19,14 @@ class Fila{
         T remover();
         void print();
 };
+
+
+template < typename T>
+Fila<T>::Fila(){
+    tam = 0;
+    capacidade = 50;
+    elementos = new T[50];
+}
 
 template < typename T>
 Fila<T>::Fila( int capacidade_ ){
@@ -55,7 +64,7 @@ void Fila<T>::inserir( int num ){
     if( full() ){
 
         capacidade = 2*capacidade;
-        T novos_elementos = new T[capacidade];
+        T* novos_elementos = new T[capacidade];
 
         for (int i = 0; i < (capacidade/2); ++i){
             novos_elementos[i] = elementos[i];
