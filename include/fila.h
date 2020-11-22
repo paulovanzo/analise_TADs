@@ -1,8 +1,6 @@
 #ifndef FILA
 #define FILA
 
-#include <iostream>
-
 template < typename T >
 class Fila{
     private:
@@ -76,9 +74,6 @@ void Fila<T>::inserir( int num ){
     }
 
     elementos[tam] = num;
-
-    std::cout << "Elemento de Fila inserido: [" << tam << "] " << elementos[tam] << std::endl;
-    
     tam++;
 
 }
@@ -90,9 +85,6 @@ T Fila<T>::remover(){
         return 0;
     }
     T var = elementos[0];
-
-    std::cout << "Elemento de Fila removido no índice 0: " << elementos[0] << std::endl;
-
 
     elementos++;
     tam--;
