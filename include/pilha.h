@@ -42,14 +42,18 @@ bool Pilha<T>::full (){
 template <typename T>
 void Pilha<T>::push ( T novo ){
   if (full()){
-    capacidade = 2*capacidade;
+    capacidade = 2*capacidade;    
     T* novos_elementos = new T[capacidade];
 
     for (int i = 0; i < (capacidade/2); ++i){
       novos_elementos[i] = elementos[i];
     }
+
+    elementos = nullptr;
+
     delete[] elementos;
     elementos = novos_elementos;
+
   }
   
   elementos[tamanho++] = novo;
