@@ -108,8 +108,8 @@ int main (){
 
 			std::cout << "Tempo de inserção da pilha [" << tam << "]: " << PilhaMediaI << " nanosegundos\n\n";
 			std::cout << "Tempo de inserção da fila [" << tam << "]: " << FilaMediaI << " nanosegundos\n\n";
-			std::cout << "Tempo de remoção da pilha [" << tam << "]: " << PilhaMediaA << " nanosegundos\n\n";
-			std::cout << "Tempo de remoção da fila [" << tam << "]: " << FilaMediaA << " nanosegundos\n\n";
+			std::cout << "Tempo de acesso da pilha [" << tam << "]: " << PilhaMediaA << " nanosegundos\n\n";
+			std::cout << "Tempo de acesso da fila [" << tam << "]: " << FilaMediaA << " nanosegundos\n\n";
 
 			outputI << std::fixed << std::setprecision(2) << PilhaMediaI << " " << FilaMediaI << "\n";
 			outputA << std::fixed << std::setprecision(2) << PilhaMediaA << " " << FilaMediaA << "\n";
