@@ -11,13 +11,13 @@ class Fila{
         Fila();
         Fila( int capacidade );
         ~Fila();
-        bool empty();
-        bool full();
-        void inserir( T num );
-        T& at(size_t index);
-        T& remover();
-        T& first();
-        void print();
+        bool empty(); // Se a fila está vazia
+        bool full(); // Se a fila está cheia
+        void inserir( T num ); // insere na fila
+        T& at(size_t index); // retorna a referência do elemento na I-ésima posição
+        T& remover(); // remove o primeiro elemento e retorna a referência
+        T& first(); // retorna a referência ao primeiro elemento
+        void print(); // imprime na tela toda fila
 };
 
 

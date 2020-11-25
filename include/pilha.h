@@ -12,12 +12,12 @@ private:
 public:
   Pilha (int n_capacidade = 50);
   ~Pilha ();
-  bool empty ();
-  bool full ();
-  T& top ();
-  T& at(int index);
-  void push ( T novo );
-  void pop ();
+  bool empty ();  // Se a pilha está vazia
+  bool full (); // Se a pilha está cheia
+  T& top (); // retorna a referência para o elemento do topo
+  T& at(int index); // retorna a referência do elemento na I-ésima posição
+  void push ( T novo ); // insere na fila
+  void pop (); // remove o primeiro elemento
   int size();
 };
  
