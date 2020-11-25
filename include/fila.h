@@ -109,14 +109,18 @@ template < typename T>
 T& Fila<T>::remover(){
 
     if( empty() ){
-        return 0;
+        std::cerr << "Fila vazia" << std::endl;
+        exit(EXIT_FAILURE);
+    }else{
+
+        T* var = elementos;
+
+        elementos++;
+        tam--;
+
+        return var[0];
     }
-    T var = elementos[0];
-
-    elementos++;
-    tam--;
-
-    return var;
+    
 }
 
 template < typename T>
