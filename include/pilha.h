@@ -44,10 +44,11 @@ template < typename T>
 T& Pilha<T>::at(int idx){
 
     if(idx > tamanho){
-        return nullptr;
+        std::cerr << "Acesso a indices invalidos. O programa sera fechado!" << std::endl;
+        exit(EXIT_FAILURE);
     }
 
-    for(size_t i{0}; i < idx; ++i){
+    for(int i{0}; i < idx-1; ++i){
         pop();
     }
     return top();

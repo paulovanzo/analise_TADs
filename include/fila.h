@@ -92,24 +92,23 @@ T& Fila<T>::first(){
 template < typename T>
 T& Fila<T>::at(size_t idx){
 
-    T* ptr;
-
     if(idx > tam){
-        return nullptr;
+        std::cerr << "Acesso a indices invalidos. O programa sera fechado!" << std::endl;
+        exit(EXIT_FAILURE);
     }
 
-    for(size_t i{0}; i < idx; ++i){
-        ptr = remover();
+    for(size_t i{0}; i < idx-1; ++i){
+        remover();
     }
     
-    return ptr;
+    return remover();
 }
 
 template < typename T>
 T& Fila<T>::remover(){
 
     if( empty() ){
-        std::cerr << "Fila vazia" << std::endl;
+        std::cerr << "Fila vazia. O programa sera fechado!" << std::endl;
         exit(EXIT_FAILURE);
     }else{
 
