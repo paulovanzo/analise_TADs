@@ -26,7 +26,7 @@ int main (){
 	std::ofstream filaA;
 	std::ofstream filaI;
 
-	generate();
+	// generate();
 
 	input.open("./data/vetor.txt");
 
