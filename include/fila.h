@@ -15,6 +15,7 @@ class Fila{
         bool full();
         void inserir( int num );
         T remover();
+        T first();
         void print();
 };
 
@@ -76,6 +77,15 @@ void Fila<T>::inserir( int num ){
     elementos[tam] = num;
     tam++;
 
+}
+
+template < typename T>
+T Fila<T>::first(){
+
+    if( empty() ){
+        return 0;
+    }
+    return elementos[0];
 }
 
 template < typename T>
