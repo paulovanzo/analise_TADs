@@ -58,7 +58,7 @@ bool Fila<T>::full(){
 }
 
 template < typename T>
-void Fila<T>::inserir( int num ){
+void Fila<T>::inserir( T num ){
 
     if( full() ){
 
