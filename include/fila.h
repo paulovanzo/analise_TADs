@@ -13,9 +13,10 @@ class Fila{
         ~Fila();
         bool empty();
         bool full();
-        void inserir( int num );
-        T remover();
-        T first();
+        void inserir( T num );
+        T& at(size_t index);
+        T& remover();
+        T& first();
         void print();
 };
 
@@ -80,7 +81,7 @@ void Fila<T>::inserir( T num ){
 }
 
 template < typename T>
-T Fila<T>::first(){
+T& Fila<T>::first(){
 
     if( empty() ){
         return 0;
@@ -89,7 +90,23 @@ T Fila<T>::first(){
 }
 
 template < typename T>
-T Fila<T>::remover(){
+T& Fila<T>::at(size_t idx){
+
+    T* ptr;
+
+    if(idx > tam){
+        return nullptr;
+    }
+
+    for(size_t i{0}; i < idx; ++i){
+        ptr = remover();
+    }
+    
+    return ptr;
+}
+
+template < typename T>
+T& Fila<T>::remover(){
 
     if( empty() ){
         return 0;

@@ -15,6 +15,7 @@ public:
   bool empty ();
   bool full ();
   T& top ();
+  T& at(int index);
   void push ( T novo );
   void pop ();
   int size();
@@ -37,6 +38,19 @@ bool Pilha<T>::empty (){
 template <typename T>
 bool Pilha<T>::full (){
   return tamanho == capacidade;
+}
+
+template < typename T>
+T& Pilha<T>::at(int idx){
+
+    if(idx > tamanho){
+        return nullptr;
+    }
+
+    for(size_t i{0}; i < idx; ++i){
+        pop();
+    }
+    return top();
 }
  
 template <typename T>
@@ -72,7 +86,7 @@ void Pilha<T>::pop (){
 template <typename T>
 T& Pilha<T>::top(){ 
   if (empty()) {
-    std::cerr << "Acesso invalido a elemento no topo.O programa sera fechado!" << std::endl;
+    std::cerr << "Acesso invalido a elemento no topo. O programa sera fechado!" << std::endl;
     exit(EXIT_FAILURE);
   }
   return elementos[tamanho-1];
