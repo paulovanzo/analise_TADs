@@ -89,7 +89,7 @@ int main (){
 
 				inicioPilha = std::chrono::high_resolution_clock::now();
 
-				pilha.at(tam);
+				pilha.at(tam-1);
 
 				fimPilha = std::chrono::high_resolution_clock::now() - inicioPilha;
 				tempoUsadoPilha = std::chrono::duration_cast<std::chrono::nanoseconds>(fimPilha).count();
@@ -97,7 +97,7 @@ int main (){
 				
 				inicioFila = std::chrono::high_resolution_clock::now();
 
-				fila.at(tam);
+				fila.at(tam-1);
 
 				fimFila = std::chrono::high_resolution_clock::now() - inicioFila;
 				tempoUsadoFila = std::chrono::duration_cast<std::chrono::nanoseconds>(fimFila).count();
