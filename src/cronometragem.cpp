@@ -21,10 +21,10 @@ void StrParaInt(int* vetor, std::string &str){
 int main (){
 	std::ifstream input;
 
-	std::ofstream pilhaA;
-	std::ofstream pilhaI;
-	std::ofstream filaA;
-	std::ofstream filaI;
+	std::ofstream outputInsertFila;
+	std::ofstream outputAcessPilha;
+	std::ofstream outputInsertPilha;
+	std::ofstream outputAcessFila;
 
 	// generate();
 
@@ -34,10 +34,10 @@ int main (){
 
 	if( input.is_open() ){
 		
-		pilhaI.open("./data/pilhaInsert.txt");
-		pilhaA.open("./data/pilhaAcess.txt");
-		filaI.open("./data/filaInsert.txt");
-		filaA.open("./data/filaAcess.txt");
+		outputInsertFila.open("./data/pilhaInsert.txt");
+		outputAcessPilha.open("./data/pilhaAcess.txt");
+		outputInsertPilha.open("./data/filaInsert.txt");
+		outputAcessFila.open("./data/filaAcess.txt");
 
 		for (int tam = 50; tam <= 5000; tam+=50) {
 
@@ -118,18 +118,18 @@ int main (){
 			std::cout << "Tempo de acesso da pilha [" << tam << "]: " << PilhaMediaA << " nanosegundos\n\n";
 			std::cout << "Tempo de acesso da fila [" << tam << "]: " << FilaMediaA << " nanosegundos\n\n";
 
-			pilhaI << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaI << std::endl;
-			filaI << std::fixed << std::setprecision(2) << tam << " " << FilaMediaI << std::endl;
-			pilhaA << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaA << std::endl;
-			filaA << std::fixed << std::setprecision(2) << tam << " " << FilaMediaA << std::endl;
+			outputInsertPilha << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaI << "\n";
+			outputAcessPilha << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaA << "\n";
+			outputInsertFila << std::fixed << std::setprecision(2) << tam << " " << FilaMediaI << "\n";
+			outputAcessFila << std::fixed << std::setprecision(2) << tam << " " << FilaMediaA << "\n";
 
 		}
 	}
 
-	pilhaI.close();
-	filaI.close();
-	pilhaA.close();
-	filaA.close();
+	outputInsertPilha.close();
+	outputAcessPilha.close();
+	outputInsertFila.close();
+	outputAcessFila.close();
 	
 	return 0;
 }
