@@ -118,10 +118,10 @@ int main (){
 			std::cout << "Tempo de acesso da pilha [" << tam << "]: " << PilhaMediaA << " nanosegundos\n\n";
 			std::cout << "Tempo de acesso da fila [" << tam << "]: " << FilaMediaA << " nanosegundos\n\n";
 
-			pilhaI << std::fixed << std::setprecision(2) << PilhaMediaI << std::endl;
-			filaI << std::fixed << std::setprecision(2) << FilaMediaI << std::endl;
-			pilhaA << std::fixed << std::setprecision(2) << PilhaMediaA << std::endl;
-			filaA << std::fixed << std::setprecision(2) << FilaMediaA << std::endl;
+			pilhaI << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaI << std::endl;
+			filaI << std::fixed << std::setprecision(2) << tam << " " << FilaMediaI << std::endl;
+			pilhaA << std::fixed << std::setprecision(2) << tam << " " << PilhaMediaA << std::endl;
+			filaA << std::fixed << std::setprecision(2) << tam << " " << FilaMediaA << std::endl;
 
 		}
 	}
