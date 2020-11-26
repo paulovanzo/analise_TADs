@@ -64,9 +64,7 @@ int main (){
 				Pilha<int> pilha(tam);
 				auto inicioPilha = std::chrono::high_resolution_clock::now();
 
-				for (int i = 0; i < tam; i++) {
-					pilha.push(vetor[i]);
-				}
+				pilha.push(vetor[k]);
 
 				auto fimPilha = std::chrono::high_resolution_clock::now() - inicioPilha;
 				long long tempoUsadoPilha = std::chrono::duration_cast<std::chrono::nanoseconds>(fimPilha).count();
@@ -76,14 +74,19 @@ int main (){
 				Fila<int> fila;
 				auto inicioFila = std::chrono::high_resolution_clock::now();
 
-				for (int i = 0; i < tam; i++) {
-					fila.inserir(vetor[i]);
-				}
-
+				fila.inserir(vetor[k]);
+				
 				auto fimFila = std::chrono::high_resolution_clock::now() - inicioFila;
 				long long tempoUsadoFila = std::chrono::duration_cast<std::chrono::nanoseconds>(fimFila).count();
 				FilaMediaI = tempoUsadoFila + FilaMediaI;
-				
+
+				for (int i = 0; i < tam; i++) {
+					pilha.push(vetor[i]);
+				}
+
+				for (int i = 0; i < tam; i++) {
+					fila.inserir(vetor[i]);
+				}
 				
 				// ACESSO -------------------------------------------------------------------------------------------
 
